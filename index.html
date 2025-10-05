@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Weather</title>
+  </head>
+  <body
+    class="w- font-[Bricolage_Grotesque] bg-[#181070] flex flex-col justify-center align-center p-[1.5rem] gap-[3rem]"
+  >
+    <header
+      class="f flex-col justify-center items-center text-white gap-[2rem]"
+    >
+      <!-- this is the containere where the logo and the Units -->
+      <div class="flex justify-between w-[100vw] px-[2rem]">
+        <img class="w-[12rem]" src="assets/images/logo.svg" alt="logo" />
+        <div
+          class="flex justify-around items-center bg-[gray] gap-[0.5rem] rounded-[0.5rem] w-[8rem]"
+        >
+          <img
+            class="w-[1.5rem]"
+            src="assets/images/icon-units.svg"
+            alt="setting"
+          />
+          <h3>Units</h3>
+          <img
+            class="w-[1rem]"
+            src="assets/images/icon-dropdown.svg"
+            alt="more"
+          />
+        </div>
+      </div>
+      <h1 class="text-center text-[4rem] font-bold">
+        How's the sky looking today?
+      </h1>
+      <div class="flex flex-col text-[1.4rem] font-bold text-white">
+        <img
+          class="w-[1.7rem] relative top-[3rem] left-[2rem]"
+          src="assets/images/icon-search.svg"
+          alt="search"
+        />
+        <input
+          class="w-[80vw] h-[4rem] rounded-[0.5rem] bg-[gray] pl-[5rem]"
+          type="text"
+          name="search"
+          id="search"
+          placeholder="Search for a place..."
+        />
+        <button class="bg-[#199fd7] mt-[0.5rem] h-[3rem] rounded-[0.5rem]">
+          Search
+        </button>
+      </div>
+    </header>
+    <main class="flex flex-col justify-center items-center">
+      <div class="flex flex-col justify-center items-center gap-[1.5rem]">
+        <div
+          class="flex flex-col py-[2rem] justify-center align-center bg-[url(assets/images/bg-today-small.svg)] w-[80vw] bg-no-repeat bg-center bg-cover text-white rounded-[2rem]"
+        >
+          <h3 class="text-[2rem] font-bold text-center">City Name</h3>
+          <h6 class="text-[1rem] text-italic font-bold text-center italic">
+            Day, Mounth, Year
+          </h6>
+          <div class="flex align-center justify-center pr-[2rem]">
+            <img
+              class="w-[10rem] h-[10rem]"
+              src="assets/images/icon-sunny.webp"
+              alt="sun"
+            />
+            <h3 class="text-[8rem] font-semibold italic">20°</h3>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 w-[80vw] gap-[1rem]">
+          <div
+            class="bg-[gray] p-[1rem] flex items-left flex-col rounded-[1rem] h-[8rem] justify-center"
+          >
+            <h3 class="text-[1.1rem] font-semibold">Feels Like</h3>
+            <h3 class="text-[2rem] font-medium">18°</h3>
+          </div>
+          <div
+            class="bg-[gray] p-[1rem] flex items-left flex-col rounded-[1rem] h-[8rem] justify-center"
+          >
+            <h3 class="text-[1.1rem] font-semibold">Humidity</h3>
+            <h3 class="text-[2rem] font-medium">46%</h3>
+          </div>
+          <div
+            class="bg-[gray] p-[1rem] flex items-left flex-col rounded-[1rem] h-[8rem] justify-center"
+          >
+            <h3 class="text-[1.1rem] font-semibold">Wind</h3>
+            <h3 class="text-[2rem] font-medium">14 Km/h</h3>
+          </div>
+          <div
+            class="bg-[gray] p-[1rem] flex items-left flex-col rounded-[1rem] h-[8rem] justify-center"
+          >
+            <h3 class="text-[1.1rem] font-semibold">Precipitation</h3>
+            <h3 class="text-[2rem] font-medium">0mm</h3>
+          </div>
+        </div>
+        <div class=""></div>
+      </div>
+    </main>
+  </body>
+</html>
