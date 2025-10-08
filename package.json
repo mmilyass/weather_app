@@ -1,7 +1,34 @@
 {
   "devDependencies": {
+    "@tailwindcss/cli": "^4.1.14",
     "@tailwindcss/forms": "^0.5.10",
     "@tailwindcss/typography": "^0.5.19",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
     "tailwindcss": "^4.1.14"
-  }
+  },
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "![Design preview for the Weather app coding challenge](./preview.jpg)",
+  "main": "index.js",
+  "dependencies": {
+    "cssesc": "^3.0.0",
+    "mini-svg-data-uri": "^1.4.4",
+    "postcss-selector-parser": "^6.0.10",
+    "util-deprecate": "^1.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmilyass/weather_app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mmilyass/weather_app/issues"
+  },
+  "homepage": "https://github.com/mmilyass/weather_app#readme"
 }
