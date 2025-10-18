@@ -14,109 +14,138 @@
 
 <body
   class="font-[Bricolage_Grotesque] bg-[#0a072f]  flex flex-col justify-center align-center p-[1.5rem] gap-[3rem]  text-white">
-  <header class="flex-col justify-center items-center text-white gap-[2rem]">
+  <header class="flex flex-col justify-center text-white gap-[2rem] w-full">
     <!-- this is the containere where the logo and the Units -->
-    <div class="flex justify-between">
-      <img class="w-[12rem]" src="assets/images/logo.svg" alt="logo" />
-      <div class="flex justify-around items-center bg-[#1f2836] gap-[0.5rem] rounded-[0.5rem] w-[8rem]">
-        <img class="w-[1.5rem]" src="assets/images/icon-units.svg" alt="setting" />
-        <h3>Units</h3>
-        <img class="w-[1rem]" src="assets/images/icon-dropdown.svg" alt="more" />
+    <div class="flex flex-col gap-[1rem]">
+      <div class="flex justify-between ">
+        <img class="w-[12rem]" src="assets/images/logo.svg" alt="logo" />
+        <div class="flex justify-around items-center bg-[#1f2836] gap-[0.5rem] rounded-[0.5rem] w-[8rem]">
+          <img class="w-[1.5rem]" src="assets/images/icon-units.svg" alt="setting" />
+          <h3>Units</h3>
+          <img id="dropdown-one" class="w-[1rem]" src="assets/images/icon-dropdown.svg" alt="more" />
+        </div>
       </div>
+      <!-- <div class="flex justify-end">
+        <ul class="flex flex-col gap-[0.5rem] bg-amber-50 p-[0.5rem] rounded-[1rem]">
+          <h3 class="text-[1.5rem] font-bold text-black ml-[0.5rem]">Mesure</h3>
+          <div class="flex gap-[0.5rem]">
+            <li class="bg-blue-400 h-[2rem] text-[1.3rem] px-[1rem] w-[15rem] rounded-[1rem]" id="cel">celicuice</li>
+            <label class="bg-blue-500 h-[2rem] text-[1.3rem] w-[5rem] rounded-[1rem] text-center" for="cel">✔</label>
+          </div>
+          <div class="flex gap-[0.5rem]">
+            <li class="bg-blue-400 h-[2rem] text-[1.3rem] px-[1rem] w-[15rem] rounded-[1rem]" id="frah">frahnatine</li>
+            <label class="bg-blue-500 h-[2rem] text-[1.3rem] w-[5rem] rounded-[1rem] text-center" for="frah">✔</label>
+          </div>
+          <h3 class="text-[1.5rem] font-bold text-black ml-[0.5rem]">Mesure</h3>
+          <div class="flex gap-[0.5rem]">
+            <li class="bg-blue-400 h-[2rem] text-[1.3rem] px-[1rem] w-[15rem] rounded-[1rem]" id="frah">frahnatine</li>
+            <label class="bg-blue-500 h-[2rem] text-[1.3rem] w-[5rem] rounded-[1rem] text-center" for="frah">✔</label>
+          </div>
+          <div class="flex gap-[0.5rem]">
+            <li class="bg-blue-400 h-[2rem] text-[1.3rem] px-[1rem] w-[15rem] rounded-[1rem]" id="frah">frahnatine</li>
+            <label class="bg-blue-500 h-[2rem] text-[1.3rem] w-[5rem] rounded-[1rem] text-center" for="frah">✔</label>
+          </div>
+        </ul>
+      </div> -->
     </div>
-    
+
     <h1 class="text-center text-[4rem] font-bold mt-[4rem]">
       How's the sky looking today?
     </h1>
     <!-- this part is where the search button and search input are -->
-    <div id="searchContain" class="flex flex-col text-[1.4rem] font-bold justify-center  items-center">
-      <img class="w-[1.7rem] left-[-37vw] top-[3.4rem] relative" src="assets/images/icon-search.svg" alt="search" />
-      <form>
-        <input id="searchInput" class="h-[5rem] rounded-[1rem] bg-[#374255] pl-[15vw] w-[90vw]" type="text" name="search" id="search"
-        placeholder="Search for a place..." />
-        <button class=" w-[90vw] bg-[#199fd7] mt-[0.5rem] h-[3rem] rounded-[0.5rem]">
+    <div id="searchContain"
+      class="lg:flex-row lg:h-[5rem] gap-[1rem] flex flex-col text-[1.4rem] font-bold justify-center items-center relative">
+      <img class="w-[2rem] left-[6vw] absolute top-[1.5rem] lg:hidden" src="assets/images/icon-search.svg"
+        alt="search" />
+      <form class="lg:flex-row flex flex-col w-full gap-[1rem] justify-center">
+        <input id="searchInput"
+          class=" lg:w-[40rem] lg:h-[4rem] lg:pl-[5rem] h-[5rem] rounded-[1rem] bg-[#374255] pl-[13vw]" type="text"
+          name="search" id="search" placeholder="Search for a place..." />
+        <button class="lg:w-[10rem] bg-[#199fd7] h-[4rem] rounded-[1rem] hover:opacity-75 duration-300 ease-out">
           Search
         </button>
       </form>
-      <h3 id="message-error" class=" hidden text-[red] text-[2rem] pt-[2rem] h-[3rem]"></h3>
+      <h3 id="message-error" class=" hidden text-[#ffffff] text-[2rem] pt-[2rem] h-[3rem]"></h3>
     </div>
   </header>
-  <main class="hidden flex flex-col justify-center items-center gap-[2rem]">
+  <main class="hidden lg:flex-row lg:h-[50rem] flex flex-col justify-center gap-[2rem] lg:gap-[1rem] w-full">
     <!-- this first div contain day other misurment and the daily forecast field -->
-    <div class="flex flex-col justify-center items-center gap-[3rem]">
+    <div class="flex flex-col justify-center items-center gap-[2rem]">
       <div
-        class="flex flex-col py-[2rem] justify-center items-center bg-[url('/assets/images/bg-today-small.svg')] w-[90vw] h-[20rem] bg-no-repeat bg-center bg-cover text-white rounded-[2rem]">
-        <h3 id="CityName" class="text-[2rem] font-bold text-center">City Name</h3>
-        <h6 id="date" class="text-[1rem] text-italic font-bold text-center italic">
-          _
-        </h6>
-        <div class="flex align-center justify-center gap-[3rem]">
-          <img id="main-img" class=" hidden w-[10rem] h-[10rem]" src="assets/images/icon-sunny.webp" alt="sun" />
-          <h3 id="temp" class="text-[8rem] font-semibold italic"></h3>
+        class="w-full flex flex-col py-[2rem] justify-around bg-[url('/assets/images/bg-today-small.svg')] h-[20rem] bg-no-repeat bg-center bg-cover  text-white rounded-[2rem] lg:flex-row">
+        <div class="flex flex-col justify-center items-center">
+          <h3 id="CityName" class="text-[2rem] font-bold text-center xl:text-[3rem]"></h3>
+          <h6 id="date" class="text-[1rem] text-italic font-bold text-center italic  xl:text-[2rem]">
+          </h6>
+        </div>
+        <div class=" flex align-center justify-center gap-[3rem] lg:gap-0 lg:justify-around lg:mt-[2rem]">
+          <img id="main-img" class="w-[10rem] h-[10rem]" src="assets/images/icon-loading.svg" alt="sun" />
+          <h3 id="temp" class="text-[8rem] font-semibold italic text-center lg:text-[7rem]"></h3>
         </div>
       </div>
-      <div class="grid grid-cols-2 w-[90vw] gap-[1rem]">
-        <div class=" bg-[#374255] p-[1rem] flex items-left flex-col rounded-[1rem] h-[8rem] justify-center gap-[1rem]">
+      <div class=" lg:w-[50vw] lg:grid-cols-4 lg:h-[12rem] grid grid-cols-2 gap-[1rem]  w-full">
+        <div class=" bg-[#374255] p-[1rem] flex items-left flex-col rounded-[1rem] h-[8rem]  justify-around">
           <h3 class="text-[1.1rem] font-semibold">Feels Like</h3>
-          <h3 id="status" class="text-[1.5rem] font-medium">_</h3>
+          <h3 id="status" class=" text-blue-300 text-[2rem] lg:text-[1.1rem] font-medium">_</h3>
         </div>
-        <div class=" bg-[#374255] p-[1rem] flex items-left flex-col rounded-[1rem] h-[8rem] justify-center gap-[1rem]">
+        <div class=" bg-[#374255] p-[1rem] flex items-left flex-col rounded-[1rem] h-[8rem]  justify-around">
           <h3 class="text-[1.1rem] font-semibold">Humidity</h3>
-          <h3 id="status" class="text-[2rem] font-medium">_</h3>
+          <h3 id="status" class=" text-blue-300 text-[2rem] lg:text-[1.3rem]  font-medium">_</h3>
         </div>
-        <div class=" bg-[#374255] p-[1rem] flex items-left flex-col rounded-[1rem] h-[8rem] justify-center gap-[1rem]">
+        <div class=" bg-[#374255] p-[1rem] flex items-left flex-col rounded-[1rem] h-[8rem]  justify-around">
           <h3 class="text-[1.1rem] font-semibold">Wind</h3>
-          <h3 id="status" class="text-[2rem] font-medium">_</h3>
+          <h3 id="status" class=" text-blue-300 text-[2rem] lg:text-[1.3rem]  font-medium">_</h3>
         </div>
-        <div class=" bg-[#374255] p-[1rem] flex items-left flex-col rounded-[1rem] h-[8rem] justify-center gap-[1rem]">
-          <h3 class="text-[1.1rem] font-semibold">Precipitation</h3>
-          <h3 id="status" class="text-[2rem] font-medium">_</h3>
+        <div class=" bg-[#374255] p-[1rem] flex items-left flex-col rounded-[1rem] h-[8rem]  justify-around">
+          <h3 class="text-[1.1rem] font-semibold break-words hyphens-auto">Precipitation</h3>
+          <h3 id="status" class=" text-blue-300 text-[2rem] lg:text-[1.3rem]  font-medium">_</h3>
         </div>
       </div>
-      <div class="flex flex-col gap-[1rem]">
-        <h2 class="text-[2rem] font-bold">Daily forecast</h2>
-        <div class=" grid grid-cols-3 gap-[1rem] w-[90vw]">
-          <div class="flex h-[170px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
+      <div class="flex flex-col gap-[1rem]  w-full">
+        <h2 class="text-[2rem] font-bold ml-[1rem]">Daily forecast</h2>
+        <div class=" lg:w-[50vw] lg:grid-cols-7 grid grid-cols-3 gap-[1rem]">
+          <div class="flex h-[200px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
             <h3 id="temp-one" class="text-[1.5rem] font-bold "></h3>
-            <img id="img-one" class="w-[4rem]" src="assets/images/icon-rain.webp" alt="rain">
+            <img id="img-one" class="w-[4rem]" src="" alt="">
             <h3 id="temp-value" class="text-1rem font-semibold"></h3>
           </div>
-          <div class="flex h-[170px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
-            <h3 id="temp-one"  class="text-[1.5rem] font-bold "></h3>
-            <img id="img-one"  class="w-[4rem]" src="assets/images/icon-rain.webp" alt="rain">
-            <h3 id="temp-value"  class="text-1rem font-semibold"></h3>
+          <div class="flex h-[200px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
+            <h3 id="temp-one" class="text-[1.5rem] font-bold "></h3>
+            <img id="img-one" class="w-[4rem]" src="" alt="">
+            <h3 id="temp-value" class="text-1rem font-semibold"></h3>
           </div>
-          <div class="flex h-[170px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
-            <h3 id="temp-one"  class="text-[1.5rem] font-bold "></h3>
-            <img id="img-one" class="w-[4rem]" src="assets/images/icon-rain.webp" alt="rain">
-            <h3 id="temp-value"  class="text-1rem font-semibold"></h3>
+          <div class="flex h-[200px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
+            <h3 id="temp-one" class="text-[1.5rem] font-bold "></h3>
+            <img id="img-one" class="w-[4rem]" src="" alt="">
+            <h3 id="temp-value" class="text-1rem font-semibold"></h3>
           </div>
-          <div class="flex h-[170px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
-            <h3 id="temp-one"  class="text-[1.5rem] font-bold "></h3>
-            <img id="img-one" class="w-[4rem]" src="assets/images/icon-rain.webp" alt="rain">
-            <h3 id="temp-value"  class="text-1rem font-semibold"></h3>
+          <div class="flex h-[200px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
+            <h3 id="temp-one" class="text-[1.5rem] font-bold "></h3>
+            <img id="img-one" class="w-[4rem]" src="" alt="">
+            <h3 id="temp-value" class="text-1rem font-semibold"></h3>
           </div>
-          <div class="flex h-[170px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
-            <h3 id="temp-one"  class="text-[1.5rem] font-bold "></h3>
-            <img id="img-one"  class="w-[4rem]" src="assets/images/icon-rain.webp" alt="rain">
-            <h3 id="temp-value"  class="text-1rem font-semibold"></h3>
+          <div class="flex h-[200px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
+            <h3 id="temp-one" class="text-[1.5rem] font-bold "></h3>
+            <img id="img-one" class="w-[4rem]" src="" alt="">
+            <h3 id="temp-value" class="text-1rem font-semibold"></h3>
           </div>
-          <div class="flex h-[170px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
-            <h3 id="temp-one"  class="text-[1.5rem] font-bold "></h3>
-            <img id="img-one"  class="w-[4rem]" src="assets/images/icon-rain.webp" alt="rain">
-            <h3 id="temp-value"  class="text-1rem font-semibold"></h3>
+          <div class="flex h-[200px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
+            <h3 id="temp-one" class="text-[1.5rem] font-bold "></h3>
+            <img id="img-one" class="w-[4rem]" src="" alt="">
+            <h3 id="temp-value" class="text-1rem font-semibold"></h3>
           </div>
-          <div class="flex h-[170px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
-            <h3 id="temp-one"  class="text-[1.5rem] font-bold "></h3>
-            <img id="img-one"  class="w-[4rem]" src="assets/images/icon-rain.webp" alt="rain">
-            <h3 id="temp-value"  class="text-1rem font-semibold"></h3>
+          <div class="flex h-[200px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
+            <h3 id="temp-one" class="text-[1.5rem] font-bold "></h3>
+            <img id="img-one" class="w-[4rem]" src="" alt="">
+            <h3 id="temp-value" class="text-1rem font-semibold"></h3>
           </div>
         </div>
       </div>
     </div>
     <!-- this second div responsible for the Hourly forecast  -->
     <div>
-      <div class=" flex flex-col bg-[#374255] p-[1.5rem] w-[90vw] rounded-[1rem] gap-[1rem]">
+      <div
+        class="lg:w-[30rem] flex flex-col bg-[#374255] p-[1.5rem] rounded-[1rem] gap-[1rem] lg:h-[50rem] lg:justify-around">
         <div class="flex justify-between ">
           <h3 class="text-[1.5rem] font-bold">Hourly forecast</h3>
           <div
@@ -125,58 +154,58 @@
             <img class="w-[1rem]" src="assets/images/icon-dropdown.svg" alt="more" />
           </div>
         </div>
-        <div class="flex justify-between bg-[#575763] items-center rounded-[1rem] px-[1rem]">
+        <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
-            <img id="img-two" class=" hidden w-[4rem]" src="assets/images/icon-snow.webp" alt="">
+            <img id="img-two" class="w-[4rem]" src="" alt="">
             <div id="temp-two" class="text-[1.5rem]"></div>
           </div>
           <h4 id="temp-value-one" class="text-[1.3rem]"></h4>
         </div>
-        <div class="flex justify-between bg-[#575763] items-center rounded-[1rem] px-[1rem]">
+        <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
-            <img id="img-two" class=" hidden w-[4rem]" src="assets/images/icon-snow.webp" alt="">
+            <img id="img-two" class="w-[4rem]" src="" alt="">
             <div id="temp-two" class="text-[1.5rem]"></div>
           </div>
           <h4 id="temp-value-one" class="text-[1.3rem]"></h4>
         </div>
-        <div class="flex justify-between bg-[#575763] items-center rounded-[1rem] px-[1rem]">
+        <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
-            <img id="img-two" class=" hidden w-[4rem]" src="assets/images/icon-snow.webp" alt="">
+            <img id="img-two" class="w-[4rem]" src="" alt="">
             <div id="temp-two" class="text-[1.5rem]"></div>
           </div>
           <h4 id="temp-value-one" class="text-[1.3rem]"></h4>
         </div>
-        <div class="flex justify-between bg-[#575763] items-center rounded-[1rem] px-[1rem]">
+        <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
-            <img id="img-two" class=" hidden w-[4rem]" src="assets/images/icon-snow.webp" alt="">
+            <img id="img-two" class="w-[4rem]" src="" alt="">
             <div id="temp-two" class="text-[1.5rem]"></div>
           </div>
           <h4 id="temp-value-one" class="text-[1.3rem]"></h4>
         </div>
-        <div class="flex justify-between bg-[#575763] items-center rounded-[1rem] px-[1rem]">
+        <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
-            <img id="img-two" class=" hidden w-[4rem]" src="assets/images/icon-snow.webp" alt="">
+            <img id="img-two" class="w-[4rem]" src="" alt="">
             <div id="temp-two" class="text-[1.5rem]"></div>
           </div>
           <h4 id="temp-value-one" class="text-[1.3rem]"></h4>
         </div>
-        <div class="flex justify-between bg-[#575763] items-center rounded-[1rem] px-[1rem]">
+        <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
-            <img id="img-two" class=" hidden w-[4rem]" src="assets/images/icon-snow.webp" alt="">
+            <img id="img-two" class="w-[4rem]" src="" alt="">
             <div id="temp-two" class="text-[1.5rem]"></div>
           </div>
           <h4 id="temp-value-one" class="text-[1.3rem]"></h4>
         </div>
-        <div class="flex justify-between bg-[#575763] items-center rounded-[1rem] px-[1rem]">
+        <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
-            <img id="img-two" class=" hidden w-[4rem]" src="assets/images/icon-snow.webp" alt="">
+            <img id="img-two" class="w-[4rem]" src="" alt="">
             <div id="temp-two" class="text-[1.5rem]"></div>
           </div>
           <h4 id="temp-value-one" class="text-[1.3rem]"></h4>
         </div>
-        <div class="flex justify-between bg-[#575763] items-center rounded-[1rem] px-[1rem]">
+        <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
-            <img id="img-two" class=" hidden w-[4rem]" src="assets/images/icon-snow.webp" alt="">
+            <img id="img-two" class="w-[4rem]" src="" alt="">
             <div id="temp-two" class="text-[1.5rem]"></div>
           </div>
           <h4 id="temp-value-one" class="text-[1.3rem]"></h4>

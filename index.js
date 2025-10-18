@@ -1,4 +1,4 @@
-import {days, months, getWeatherImage, forcastDays, setStatus, fetchedApi, hourlyForecast } from './functions.js'
+import { days, months, getWeatherImage, forcastDays, hourlyForecast, setStatus, fetchedApi } from './functions.js'
 
 const message = document.getElementById("message-error");
 const main = document.querySelector("main");
@@ -19,17 +19,19 @@ async function setMainTemp(data) {
 
 document.querySelector("form").addEventListener("submit", async (event) => {
     event.preventDefault();
+    // main.classList.remove("hidden");
     const input = document.getElementById("searchInput").value;
     if (input === "") {
         message.classList.remove("hidden");
         main.classList.add("hidden");
         message.textContent = "Enter a city please!";
-        message.style.color = "white";
         document.getElementById("searchContain").append(message);
     }
     else {
         const data = await fetchedApi(input);
         if (!data) {
+            console.log("hahah");
+            message.classList.remove("hidden");
             main.classList.add("hidden");
             message.textContent = "City Not found!";
             return;

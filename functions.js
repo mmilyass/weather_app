@@ -4,23 +4,43 @@ export const key = "42f65174c74c433b935152556250710";
 const status = document.querySelectorAll("#status");
 const forcast_days = document.querySelectorAll("#temp-one");
 const imgs = document.querySelectorAll("#img-one");
+const imgsTwo = document.querySelectorAll("#img-two");
 const forcast_temps = document.querySelectorAll("#temp-value");
+const tempTwo = document.querySelectorAll("#temp-two");
+const temp_value_one = document.querySelectorAll("#temp-value-one");
 export const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 export const months = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 ];
 
+const today = new Date();
 // this function fetch data from the API and store in the const data;
 
 export async function fetchedApi(city) {
     try {
-        const api = `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=7`;
+        const searchUrl = `https://api.weatherapi.com/v1/search.json?key=${key}&q=${city}`;
+        const searchRes = await fetch(searchUrl);
+        const searchData = await searchRes.json();
+
+        // If no results, city is invalid
+        console.log(searchData);
+        const exactMatch = searchData.find(
+            place => place.name.toLowerCase() === city.trim().toLowerCase()
+        );
+
+        if (!exactMatch) {
+            console.log("heheh");
+            return false;
+        }
+
+        const validCity = exactMatch.name;
+        const api = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${validCity}&days=7`;
         const response = await fetch(api);
         const data = await response.json();
         if (data.error) {
             console.log("API error:", data.error.message);
-            return false; // indicate failure
+            return false;
         }
         return data;
     }
@@ -67,7 +87,6 @@ export function getWeatherImage(conditionText) {
 //  this funciton set the forecat Days section 
 
 export async function forcastDays(data) {
-    const today = new Date();
     let d = today.getDay();
     for (let i = 0; i < 7; i++) {
         forcast_days[i].textContent = days[d];
@@ -93,5 +112,21 @@ export async function setStatus(data) {
 // this functio set the hourly forecast section.
 
 export async function hourlyForecast(data) {
+    let houre = today.getHours();
 
+    for (let i = 0; i < 8; i++) {
+        let ampm = houre >= 12 ? ' PM' : ' AM';
+        let displayHour = houre % 12 + 1 || 12;
+        let temperature = data.forecast.forecastday[0].hour[houre].temp_c;
+        let image = data.forecast.forecastday[0].hour[houre].condition.text;
+        imgsTwo[i].classList.remove("hidden");
+        imgsTwo[i].src = getWeatherImage(image);
+        temp_value_one[i].textContent = temperature.toString().split('.')[0] + "°";
+        tempTwo[i].textContent = displayHour + ampm;
+        console.log(houre);
+        if (houre === 23)
+            houre = 0;
+        else
+            houre++;
+    }
 }
