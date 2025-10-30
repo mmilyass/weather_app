@@ -54,8 +54,8 @@ export async function fetchedApi(city) {
 // this function take the condition of the weather and return the right img to the condition description
 
 
-export function getWeatherImage(conditionText) {
-    const text = conditionText.toLowerCase(); // normalize for comparison
+export function getWeatherImage(conditionText, hour) {
+    const text = conditionText.toLowerCase();
 
     if (text.includes("drizzle"))
         return "assets/images/icon-drizzle.webp";
@@ -78,9 +78,18 @@ export function getWeatherImage(conditionText) {
     if (text.includes("partly"))
         return "assets/images/icon-partly-cloudy.webp";
 
-    if (text.includes("sunny") || text.includes("clear"))
+    if (text.includes("sunny"))
         return "assets/images/icon-sunny.webp";
 
+    if (text.includes("clear")) {
+        console.log("Current local hour:", hour);
+        if (hour >= 20 || hour <= 5) {
+            console.log("hehrehehe");
+            return "assets/images/icon-clear-night.png";
+        }
+        else
+            return "assets/images/icon-sunny.webp";
+    }
     return "assets/images/icon-dropdown.webp";
 }
 
@@ -112,21 +121,23 @@ export async function setStatus(data) {
 // this functio set the hourly forecast section.
 
 export async function hourlyForecast(data) {
-    let houre = today.getHours();
+    let localtime = data.location.localtime;
+    let hour = localtime.toString().split(" ")[1].split(":")[0];
+    hour = Number(hour);
+    console.log(hour);
 
     for (let i = 0; i < 8; i++) {
-        let ampm = houre >= 12 ? ' PM' : ' AM';
-        let displayHour = houre % 12 + 1 || 12;
-        let temperature = data.forecast.forecastday[0].hour[houre].temp_c;
-        let image = data.forecast.forecastday[0].hour[houre].condition.text;
+        let ampm = hour >= 12 ? ' PM' : ' AM';
+        let displayHour = hour % 12 + 1 || 12;
+        let temperature = data.forecast.forecastday[0].hour[hour].temp_c;
+        let image = data.forecast.forecastday[0].hour[hour].condition.text;
         imgsTwo[i].classList.remove("hidden");
-        imgsTwo[i].src = getWeatherImage(image);
+        imgsTwo[i].src = getWeatherImage(image, hour);
         temp_value_one[i].textContent = temperature.toString().split('.')[0] + "°";
         tempTwo[i].textContent = displayHour + ampm;
-        console.log(houre);
-        if (houre === 23)
-            houre = 0;
+        if (hour === 23)
+            hour = 0;
         else
-            houre++;
+            hour++;
     }
 }

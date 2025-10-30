@@ -13,40 +13,18 @@
 </head>
 
 <body
-  class="font-[Bricolage_Grotesque] bg-[#0a072f]  flex flex-col justify-center align-center p-[1.5rem] gap-[3rem]  text-white">
-  <header class="flex flex-col justify-center text-white gap-[2rem] w-full">
+  class="static font-[Bricolage_Grotesque] bg-[#0a072f]  flex flex-col justify-center align-center p-[1.5rem] gap-[3rem]  text-white">
+  <header class="flex flex-col justify-center text-white gap-[2rem] w-full items-center">
     <!-- this is the containere where the logo and the Units -->
-    <div class="flex flex-col gap-[1rem]">
+    <div class="flex flex-col gap-[1rem] w-full">
       <div class="flex justify-between ">
         <img class="w-[12rem]" src="assets/images/logo.svg" alt="logo" />
         <div class="flex justify-around items-center bg-[#1f2836] gap-[0.5rem] rounded-[0.5rem] w-[8rem]">
           <img class="w-[1.5rem]" src="assets/images/icon-units.svg" alt="setting" />
-          <h3>Units</h3>
-          <img id="dropdown-one" class="w-[1rem]" src="assets/images/icon-dropdown.svg" alt="more" />
+          <h3 id="units" class="cursor-pointer hover:opacity-80">Units</h3>
+          <img id="dropdown-one" class="w-[1rem] cursor-pointer hover:opacity-80" src="assets/images/icon-dropdown.svg" alt="more" />
         </div>
       </div>
-      <!-- <div class="flex justify-end">
-        <ul class="flex flex-col gap-[0.5rem] bg-amber-50 p-[0.5rem] rounded-[1rem]">
-          <h3 class="text-[1.5rem] font-bold text-black ml-[0.5rem]">Mesure</h3>
-          <div class="flex gap-[0.5rem]">
-            <li class="bg-blue-400 h-[2rem] text-[1.3rem] px-[1rem] w-[15rem] rounded-[1rem]" id="cel">celicuice</li>
-            <label class="bg-blue-500 h-[2rem] text-[1.3rem] w-[5rem] rounded-[1rem] text-center" for="cel">✔</label>
-          </div>
-          <div class="flex gap-[0.5rem]">
-            <li class="bg-blue-400 h-[2rem] text-[1.3rem] px-[1rem] w-[15rem] rounded-[1rem]" id="frah">frahnatine</li>
-            <label class="bg-blue-500 h-[2rem] text-[1.3rem] w-[5rem] rounded-[1rem] text-center" for="frah">✔</label>
-          </div>
-          <h3 class="text-[1.5rem] font-bold text-black ml-[0.5rem]">Mesure</h3>
-          <div class="flex gap-[0.5rem]">
-            <li class="bg-blue-400 h-[2rem] text-[1.3rem] px-[1rem] w-[15rem] rounded-[1rem]" id="frah">frahnatine</li>
-            <label class="bg-blue-500 h-[2rem] text-[1.3rem] w-[5rem] rounded-[1rem] text-center" for="frah">✔</label>
-          </div>
-          <div class="flex gap-[0.5rem]">
-            <li class="bg-blue-400 h-[2rem] text-[1.3rem] px-[1rem] w-[15rem] rounded-[1rem]" id="frah">frahnatine</li>
-            <label class="bg-blue-500 h-[2rem] text-[1.3rem] w-[5rem] rounded-[1rem] text-center" for="frah">✔</label>
-          </div>
-        </ul>
-      </div> -->
     </div>
 
     <h1 class="text-center text-[4rem] font-bold mt-[4rem]">
@@ -54,7 +32,7 @@
     </h1>
     <!-- this part is where the search button and search input are -->
     <div id="searchContain"
-      class="lg:flex-row lg:h-[5rem] gap-[1rem] flex flex-col text-[1.4rem] font-bold justify-center items-center relative">
+      class="w-full lg:flex-row lg:h-[5rem] gap-[1rem] flex flex-col text-[1.4rem] font-bold justify-center items-center relative">
       <img class="w-[2rem] left-[6vw] absolute top-[1.5rem] lg:hidden" src="assets/images/icon-search.svg"
         alt="search" />
       <form class="lg:flex-row flex flex-col w-full gap-[1rem] justify-center">
@@ -65,10 +43,39 @@
           Search
         </button>
       </form>
-      <h3 id="message-error" class=" hidden text-[#ffffff] text-[2rem] pt-[2rem] h-[3rem]"></h3>
+    </div>
+    <div>
+      <h3 id="message-error" class="text-[#ffffff] text-[3rem] pt-[2rem] h-[3rem]"></h3>
     </div>
   </header>
-  <main class="hidden lg:flex-row lg:h-[50rem] flex flex-col justify-center gap-[2rem] lg:gap-[1rem] w-full">
+  <!-- this is the menu section when you click the dropdown icone it appears -->
+  <div class="justify-end hidden absolute w-full top-[5rem] right-[1.5rem]" id="navig">
+    <div class="flex flex-col gap-[0.5rem] bg-[#314479] p-[0.5rem] rounded-[1rem] w-[15rem] shadow-[-2px_2px_20px_0px_rgba(255,255,255,0.2)]">
+      <h3 class="text-[1.5rem] font-bold ml-[0.5rem]">Temperature</h3>
+      <div
+        id="cels" class="cursor-pointer active:opacity-50 h-[2.4rem] items-center bg-blue-300 flex gap-[0.5rem] rounded-[1rem]">
+        <div class="text-[1.3rem] px-[1rem] w-[15rem]">Celsius</div>
+        <label id="celsLabel" class="text-[1.5rem] w-[5rem] rounded-[1rem] text-center">✔</label>
+      </div>
+      <div
+        id="fah" class="cursor-pointer active:opacity-50 h-[2.4rem] items-center bg-blue-300 flex gap-[0.5rem] rounded-[1rem]">
+        <div class="text-[1.3rem] px-[1rem] w-[15rem]" id="frah">Fahrenheit</div>
+        <label id="fahLabel" class="text-[1.5rem] w-[5rem] rounded-[1rem] text-center"></label>
+      </div>
+      <h3 class="text-[1.5rem] font-bold ml-[0.5rem]">Wind Mesure</h3>
+      <div
+        id="klmet" class="cursor-pointer active:opacity-50 h-[2.4rem] items-center bg-blue-300 flex gap-[0.5rem] rounded-[1rem]">
+        <div class="text-[1.3rem] px-[1rem] w-[15rem]">Km/h</div>
+        <label id="kmLabel"  class="text-[1.5rem] w-[5rem] rounded-[1rem] text-center">✔</label>
+      </div>
+      <div
+        id="mph" class="cursor-pointer active:opacity-50 h-[2.4rem] items-center bg-blue-300 flex gap-[0.5rem] rounded-[1rem]">
+        <div class="text-[1.3rem] px-[1rem] w-[15rem]">mph</div>
+        <label id="mphLabel" class="text-[1.5rem] w-[5rem] rounded-[1rem] text-center"></label>
+      </div>
+    </div>
+  </div>
+  <main class="hidden lg:flex-row lg:h-[50rem] flex-col justify-center gap-[2rem] lg:gap-[1rem] w-full">
     <!-- this first div contain day other misurment and the daily forecast field -->
     <div class="flex flex-col justify-center items-center gap-[2rem]">
       <div
