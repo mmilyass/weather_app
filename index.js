@@ -7,12 +7,12 @@ let check = true;
 
 async function setMainTemp(data) {
     const today = new Date();
-    document.getElementById("CityName").textContent = data.location.name;
+    document.getElementById("CityName").textContent = data.currentData.name;
     document.getElementById("date").textContent = days[today.getDay()] + ', ' + months[today.getMonth()] + ', ' + today.getFullYear();
-    let temp = data.current.temp_c;
-    let decimalPart = temp.toString().split('.')[0] + "°";
+    let temp = data.currentData.main.temp; 
+    let decimalPart = Math.round(temp) + "°";
     document.getElementById("temp").textContent = decimalPart;
-    main_img.src = getWeatherImage(data.current.condition.text);
+    main_img.src = getWeatherImage(data.currentData.weather[0].description);
     main_img.classList.remove("hidden");
 }
 
@@ -43,7 +43,8 @@ document.querySelector("form").addEventListener("submit", async (event) => {
 }
 )
 
-function units() {
+function units(target) {
+    target.stopPropagation();
     if (check == true) {
         check = false;
         document.querySelector("header").style.opacity = "0.8";
@@ -55,6 +56,10 @@ function units() {
         document.getElementById("navig").classList.replace("flex", "hidden");
     }
 }
+
+
+// those functions are responsible for the temperature and wind mesure 
+// calculation and representation .
 
 function TempCels(){
     document.getElementById("celsLabel").textContent = "✔";
@@ -74,12 +79,21 @@ function WindMph(){
     document.getElementById("mphLabel").textContent = "✔";
 }
 
+// we are adding here an event listere for the nav bar.
 document.getElementById("dropdown-one").addEventListener("click", units);
 document.getElementById("units").addEventListener("click", units);
-// document.querySelector("header").addEventListener("click", () =>{
-//     if (check == false)
-//         document.getElementById("navig").classList.replace("flex", "hidden");
-// });
+document.getElementById("navig").addEventListener("click", target =>{
+    target.stopPropagation();
+})
+document.addEventListener("click", () =>{
+    if (check == false)
+    {
+        check = true;
+        document.querySelector("header").style.opacity = "1";
+        document.getElementById("navig").classList.replace("flex", "hidden");
+    }
+})
+
 document.getElementById("cels").addEventListener("click", TempCels);
 document.getElementById("fah").addEventListener("click", TempFah);
 document.getElementById("klmet").addEventListener("click", WindKm);
