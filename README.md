@@ -1,4 +1,4 @@
-Weather App 🌤️
+**Weather App 🌤️
 
 This is a responsive Weather App built using HTML, JavaScript, and Tailwind CSS. It fetches weather data from the Open-Meteo API
  and displays:
@@ -16,3 +16,4 @@ Unit toggling between Imperial and Metric (°C/°F, km/h/mph, mm)
 The app is fully responsive and includes smooth UI interactions thanks to Tailwind CSS utility classes.
 
 Live Demo: [](https://mmilyass.github.io/weather_app/)
+**
