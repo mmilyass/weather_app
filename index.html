@@ -13,11 +13,11 @@
 </head>
 
 <body
-  class="static font-[Bricolage_Grotesque] bg-[#0a072f]  flex flex-col justify-center align-center p-[1.5rem] gap-[3rem]  text-white">
+  class="static font-[Bricolage_Grotesque] bg-[#0a072f]  flex flex-col justify-center align-center p-[0rem] gap-[1rem]  text-white">
   <header class="flex flex-col justify-center text-white gap-[2rem] w-full items-center">
     <!-- this is the containere where the logo and the Units -->
     <div class="flex flex-col gap-[1rem] w-full">
-      <div class="flex justify-between ">
+      <div class="flex justify-between bg-blue-300 p-[1rem] w-full fixed z-50">
         <img class="w-[12rem]" src="assets/images/logo.svg" alt="logo" />
         <div class="flex justify-around items-center bg-[#1f2836] gap-[0.5rem] rounded-[0.5rem] w-[8rem]">
           <img class="w-[1.5rem]" src="assets/images/icon-units.svg" alt="setting" />
@@ -32,8 +32,8 @@
     </h1>
     <!-- this part is where the search button and search input are -->
     <div id="searchContain"
-      class="w-full lg:flex-row lg:h-[5rem] gap-[1rem] flex flex-col text-[1.4rem] font-bold justify-center items-center relative">
-      <img class="w-[2rem] left-[6vw] absolute top-[1.5rem] lg:hidden" src="assets/images/icon-search.svg"
+      class="w-full lg:flex-row lg:h-[5rem] gap-[1rem] flex flex-col text-[1.4rem] font-bold justify-center items-center relative p-[1.5rem]">
+      <img class="w-[2rem] left-[7vw] absolute top-[3rem] lg:hidden" src="assets/images/icon-search.svg"
         alt="search" />
       <form class="lg:flex-row flex flex-col w-full gap-[1rem] justify-center">
         <input id="searchInput"
@@ -49,7 +49,7 @@
     </div>
   </header>
   <!-- this is the menu section when you click the dropdown icone it appears -->
-  <div class="justify-end hidden absolute w-full top-[5rem] right-[1.5rem]" id="navig">
+  <div class="justify-end hidden fixed w-full top-[5rem] right-[1.5rem]" id="navig">
     <div class="flex flex-col gap-[0.5rem] bg-[#314479] p-[0.5rem] rounded-[1rem] w-[15rem] shadow-[-2px_2px_20px_0px_rgba(255,255,255,0.2)]">
       <h3 class="text-[1.5rem] font-bold ml-[0.5rem]">Temperature</h3>
       <div
@@ -75,7 +75,7 @@
       </div>
     </div>
   </div>
-  <main class="hidden lg:flex-row lg:h-[50rem] flex-col justify-center gap-[2rem] lg:gap-[1rem] w-full">
+  <main class="hidden lg:flex-row lg:h-[50rem] flex-col justify-center gap-[2rem] lg:gap-[1rem] w-full p-[1.5rem]" >
     <!-- this first div contain day other misurment and the daily forecast field -->
     <div class="flex flex-col justify-center items-center gap-[2rem]">
       <div
@@ -86,7 +86,7 @@
           </h6>
         </div>
         <div class=" flex align-center justify-center gap-[3rem] lg:gap-0 lg:justify-around lg:mt-[2rem]">
-          <img id="main-img" class="w-[10rem] h-[10rem]" src="assets/images/icon-loading.svg" alt="sun" />
+          <img id="main-img" class="w-[14rem] h-[14rem]" src="" alt="sun" />
           <h3 id="temp" class="text-[8rem] font-semibold italic text-center lg:text-[7rem]"></h3>
         </div>
       </div>
@@ -108,43 +108,43 @@
           <h3 id="status" class=" text-blue-300 text-[2rem] lg:text-[1.3rem]  font-medium">_</h3>
         </div>
       </div>
-      <div class="flex flex-col gap-[1rem]  w-full">
+      <div class="flex flex-col gap-[1rem] w-full">
         <h2 class="text-[2rem] font-bold ml-[1rem]">Daily forecast</h2>
         <div class=" lg:w-[50vw] lg:grid-cols-7 grid grid-cols-3 gap-[1rem]">
           <div class="flex h-[200px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
             <h3 id="temp-one" class="text-[1.5rem] font-bold "></h3>
-            <img id="img-one" class="w-[4rem]" src="" alt="">
-            <h3 id="temp-value" class="text-1rem font-semibold"></h3>
+            <img id="img-one" class="w-[6rem]" src="" alt="">
+            <h3 id="temp-value" class="text-[1.5rem] font-semibold"></h3>
           </div>
           <div class="flex h-[200px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
             <h3 id="temp-one" class="text-[1.5rem] font-bold "></h3>
-            <img id="img-one" class="w-[4rem]" src="" alt="">
-            <h3 id="temp-value" class="text-1rem font-semibold"></h3>
+            <img id="img-one" class="w-[6rem]" src="" alt="">
+            <h3 id="temp-value" class="text-[1.5rem] font-semibold"></h3>
           </div>
           <div class="flex h-[200px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
             <h3 id="temp-one" class="text-[1.5rem] font-bold "></h3>
-            <img id="img-one" class="w-[4rem]" src="" alt="">
-            <h3 id="temp-value" class="text-1rem font-semibold"></h3>
+            <img id="img-one" class="w-[6rem]" src="" alt="">
+            <h3 id="temp-value" class="text-[1.5rem] font-semibold"></h3>
           </div>
           <div class="flex h-[200px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
             <h3 id="temp-one" class="text-[1.5rem] font-bold "></h3>
-            <img id="img-one" class="w-[4rem]" src="" alt="">
-            <h3 id="temp-value" class="text-1rem font-semibold"></h3>
+            <img id="img-one" class="w-[6rem]" src="" alt="">
+            <h3 id="temp-value" class="text-[1.5rem] font-semibold"></h3>
           </div>
           <div class="flex h-[200px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
             <h3 id="temp-one" class="text-[1.5rem] font-bold "></h3>
-            <img id="img-one" class="w-[4rem]" src="" alt="">
-            <h3 id="temp-value" class="text-1rem font-semibold"></h3>
+            <img id="img-one" class="w-[6rem]" src="" alt="">
+            <h3 id="temp-value" class="text-[1.5rem] font-semibold"></h3>
           </div>
           <div class="flex h-[200px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
             <h3 id="temp-one" class="text-[1.5rem] font-bold "></h3>
-            <img id="img-one" class="w-[4rem]" src="" alt="">
-            <h3 id="temp-value" class="text-1rem font-semibold"></h3>
+            <img id="img-one" class="w-[6rem]" src="" alt="">
+            <h3 id="temp-value" class="text-[1.5rem] font-semibold"></h3>
           </div>
           <div class="flex h-[200px] flex-col justify-around items-center bg-[#374255] rounded-[1rem]">
             <h3 id="temp-one" class="text-[1.5rem] font-bold "></h3>
-            <img id="img-one" class="w-[4rem]" src="" alt="">
-            <h3 id="temp-value" class="text-1rem font-semibold"></h3>
+            <img id="img-one" class="w-[6rem]" src="" alt="">
+            <h3 id="temp-value" class="text-[1.5rem] font-semibold"></h3>
           </div>
         </div>
       </div>
@@ -157,65 +157,64 @@
           <h3 class="text-[1.5rem] font-bold">Hourly forecast</h3>
           <div
             class="flex gap-[1rem]  h-[40px] bg-[#575763] justify-center items-center px-[1rem] py-[1rem] rounded-[1rem]">
-            <h3>Tuesday</h3>
-            <img class="w-[1rem]" src="assets/images/icon-dropdown.svg" alt="more" />
+            <h3 id="today"></h3>
           </div>
         </div>
         <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
             <img id="img-two" class="w-[4rem]" src="" alt="">
-            <div id="temp-two" class="text-[1.5rem]"></div>
+            <div id="temp-two" class="text-[1.6rem]"></div>
           </div>
-          <h4 id="temp-value-one" class="text-[1.3rem]"></h4>
+          <h4 id="temp-value-one" class="text-[1.6rem]"></h4>
         </div>
         <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
             <img id="img-two" class="w-[4rem]" src="" alt="">
-            <div id="temp-two" class="text-[1.5rem]"></div>
+            <div id="temp-two" class="text-[1.6rem]"></div>
           </div>
-          <h4 id="temp-value-one" class="text-[1.3rem]"></h4>
+          <h4 id="temp-value-one" class="text-[1.6rem]"></h4>
         </div>
         <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
             <img id="img-two" class="w-[4rem]" src="" alt="">
-            <div id="temp-two" class="text-[1.5rem]"></div>
+            <div id="temp-two" class="text-[1.6rem]"></div>
           </div>
-          <h4 id="temp-value-one" class="text-[1.3rem]"></h4>
+          <h4 id="temp-value-one" class="text-[1.6rem]"></h4>
         </div>
         <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
             <img id="img-two" class="w-[4rem]" src="" alt="">
-            <div id="temp-two" class="text-[1.5rem]"></div>
+            <div id="temp-two" class="text-[1.6rem]"></div>
           </div>
-          <h4 id="temp-value-one" class="text-[1.3rem]"></h4>
+          <h4 id="temp-value-one" class="text-[1.6rem]"></h4>
         </div>
         <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
             <img id="img-two" class="w-[4rem]" src="" alt="">
-            <div id="temp-two" class="text-[1.5rem]"></div>
+            <div id="temp-two" class="text-[1.6rem]"></div>
           </div>
-          <h4 id="temp-value-one" class="text-[1.3rem]"></h4>
+          <h4 id="temp-value-one" class="text-[1.6rem]"></h4>
         </div>
         <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
             <img id="img-two" class="w-[4rem]" src="" alt="">
-            <div id="temp-two" class="text-[1.5rem]"></div>
+            <div id="temp-two" class="text-[1.6rem]"></div>
           </div>
-          <h4 id="temp-value-one" class="text-[1.3rem]"></h4>
+          <h4 id="temp-value-one" class="text-[1.6rem]"></h4>
         </div>
         <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
             <img id="img-two" class="w-[4rem]" src="" alt="">
-            <div id="temp-two" class="text-[1.5rem]"></div>
+            <div id="temp-two" class="text-[1.6rem]"></div>
           </div>
-          <h4 id="temp-value-one" class="text-[1.3rem]"></h4>
+          <h4 id="temp-value-one" class="text-[1.6rem]"></h4>
         </div>
         <div class="flex justify-between bg-[#575763] lg:h-[8rem]  items-center rounded-[1rem] px-[1rem]">
           <div class="flex justify-around items-center gap-[1rem]">
             <img id="img-two" class="w-[4rem]" src="" alt="">
-            <div id="temp-two" class="text-[1.5rem]"></div>
+            <div id="temp-two" class="text-[1.6rem]"></div>
           </div>
-          <h4 id="temp-value-one" class="text-[1.3rem]"></h4>
+          <h4 id="temp-value-one" class="text-[1.6rem]"></h4>
         </div>
       </div>
     </div>

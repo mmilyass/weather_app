@@ -5,7 +5,7 @@
     "@tailwindcss/typography": "^0.5.19",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.14"
+    "tailwindcss": "^4.1.17"
   },
   "name": "weatherapp",
   "version": "1.0.0",
@@ -30,5 +30,6 @@
   "bugs": {
     "url": "https://github.com/mmilyass/weather_app/issues"
   },
-  "homepage": "https://github.com/mmilyass/weather_app#readme"
+  "homepage": "https://github.com/mmilyass/weather_app#readme",
+  "type": "commonjs"
 }
