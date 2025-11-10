@@ -15,5 +15,5 @@ Unit toggling between Imperial and Metric (°C/°F, km/h/mph, mm)
 
 The app is fully responsive and includes smooth UI interactions thanks to Tailwind CSS utility classes.
 
-Live Demo: [](https://mmilyass.github.io/weather_app/)
+[ClickMe](https://mmilyass.github.io/weather_app/)
 **
